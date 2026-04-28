@@ -1,0 +1,26 @@
+name: Publicar en AUR
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  aur-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📦 Descargar código
+        uses: actions/checkout@v4
+        
+      - name: 🔑 Inicializar pacman keyring
+        run: docker run --rm -v /etc/pacman.d/gnupg:/etc/pacman.d/gnupg archlinux:latest pacman-key --init
+
+      - name: 🚀 Subir al Arch User Repository
+        uses: KSXGitHub/github-actions-deploy-aur@v4.1.3
+        with:
+          pkgname: asfy-bright
+          pkgbuild: ./PKGBUILD
+          commit_username: ${{ secrets.AUR_USERNAME }}
+          commit_email: ${{ secrets.AUR_EMAIL }}
+          ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
+          commit_message: "Update to release ${{ github.event.release.tag_name }}"
+          ssh_keyscan_types: rsa,ecdsa,ed25519
