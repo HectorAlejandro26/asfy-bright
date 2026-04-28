@@ -1,0 +1,29 @@
+use_percent = false
+
+[[thresholds]]
+icon = "󰃚"
+level = 0.1425
+
+[[thresholds]]
+icon = "󰃛"
+level = 0.1425
+
+[[thresholds]]
+icon = "󰃜"
+level = 0.1425
+
+[[thresholds]]
+icon = "󰃝"
+level = 0.1425
+
+[[thresholds]]
+icon = "󰃞"
+level = 0.1425
+
+[[thresholds]]
+icon = "󰃟"
+level = 0.1425
+
+[[thresholds]]
+icon = "󰃠"
+level = 0.1425
