@@ -9,7 +9,7 @@ depends=('gtk4' 'gtk4-layer-shell' 'glibc' 'gcc-libs' 'brightnessctl')
 makedepends=('cargo')
 source=("$pkgname::git+$url.git#tag=v$pkgver")
 md5sums=('SKIP')
-options=('!debug')
+options=('!debug' 'git')
 
 build() {
     cd "$pkgname"
