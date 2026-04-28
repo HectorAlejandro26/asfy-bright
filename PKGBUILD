@@ -6,7 +6,7 @@ arch=('x86_64')
 url="https://github.com/HectorAlejandro26/asfy-bright"
 license=('MIT')
 depends=('gtk4' 'gtk4-layer-shell' 'glibc' 'gcc-libs' 'brightnessctl')
-makedepends=('cargo')
+makedepends=('cargo' 'git')
 source=("$pkgname::git+$url.git#tag=v$pkgver")
 md5sums=('SKIP')
 options=('!debug')
